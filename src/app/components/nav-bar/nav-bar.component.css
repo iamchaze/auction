@@ -1,0 +1,27 @@
+body{
+  word-wrap: break-word;
+}
+div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(173, 137, 137);
+  padding: 1rem;
+}
+div button{
+  background-color: transparent;
+  border: transparent 1px solid;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+}
+#logout{
+  background-color: red;
+  box-shadow: 0rem 0rem 0.5rem rgba(0,0,0,0.5);
+}
+div button:hover{
+  border: 1px solid white;
+  border-radius: 5px;
+}

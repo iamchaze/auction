@@ -1,0 +1,20 @@
+:root{
+  --color-primary: #b40033;
+  --color-secondary:#1F1E1E;
+  --color-ternary: rgb(192, 192, 99);
+  --color-white: #ffffff;
+}
+.card-body{
+  margin: 0;
+  padding: 0;
+}
+.card{
+  width: 100%;
+}
+.card-header{
+  background-color:var(--color-secondary);
+  width: 100%;
+}
+.card-footer{
+  background-color:var(--color-secondary);
+}

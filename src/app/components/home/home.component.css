@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('../../../styles.css');
+
+:root{
+  --color-primary: #b40033;
+  --color-secondary:rgb(31, 30, 30);
+  --color-ternary: rgb(228, 228, 206);
+}
+.buttons{
+  margin: auto;
+  text-align: center;
+}
+.buttons button{
+  margin: 2%;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(30, 30, 30) ;
+  color: white;
+  font-family: 'Poppins';
+  font-weight: bold;
+  transition: all 0.1s;
+}
+.buttons button:hover{
+  background-color: white;
+  color: #b40033;
+  cursor: pointer;
+}
+.buttons button:active{
+  scale: 95%;
+  transition: all 0.05s;
+}

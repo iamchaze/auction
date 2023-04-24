@@ -1,0 +1,12 @@
+<div class="login-form">
+  <h2>Login</h2>
+  <label for="username">Username</label>
+  <input  class="inputbox" type="text" name="username" id="username" placeholder="Enter Username">
+  <label for="password">Password</label>
+  <input class="inputbox" type="password" name="password" id="password" placeholder="Enter Password">
+    <button (click)="login()" class="button">Login</button>
+    <div class="signup">
+      <p>Don't have an Account?</p>
+    <button class="button" (click)="navigateToSignUp()">Create Account</button>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+.sign-up-form{
+  background-color: white;
+  width: 40%;
+  max-width: 90%;
+  margin: 2% auto;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 0rem 0rem 1.5rem rgba(0,0,0,0.5);
+}
+h2{
+  margin: 1%;
+}
+.sign-up-form label{
+  width: 100%;
+  padding: 2% 5%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.sign-up-form input{
+  display: block;
+  width: 90%;
+  margin: auto;
+  padding: 1%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.sign-up-form button{
+  margin: 5%;
+  border: none;
+  background-color: rgb(31, 30, 30);
+  color: white;
+  padding: 1% 5%;
+  border-radius: 5px;
+}
+.sign-up-form button:hover{
+  background-color: rgb(77, 77, 77);
+}
+p{
+  margin: 0 5%;
+  padding: 0;
+}
+.login button{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+@media screen and (max-width: 750px) {
+  .sign-up-form{
+    width: 90%;
+  }
+}
