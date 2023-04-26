@@ -1,0 +1,26 @@
+{
+  "Users": [
+    {
+      "firstName": "asdf",
+      "lastName": "asf",
+      "email": "klafs",
+      "contact": "lkja",
+      "address": "lkj",
+      "username": "lkj",
+      "password": "l",
+      "confirmPassword": "kjl",
+      "id": 1
+    },
+    {
+      "firstName": "asdf",
+      "lastName": "asf",
+      "email": "klafs",
+      "contact": "lkja",
+      "address": "lkj",
+      "username": "lkj",
+      "password": "l",
+      "confirmPassword": "kjl",
+      "id": 2
+    }
+  ]
+}

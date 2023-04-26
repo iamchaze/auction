@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalService } from 'src/app/shared/services/global.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
-  constructor(private router:Router){}
+  constructor(private router:Router, private service: GlobalService){}
 
   goToViewProducts(){
     this.router.navigate(['/view-products'])
@@ -18,7 +19,8 @@ export class NavBarComponent {
   goToProfile(){
     this.router.navigate(['/profile'])
   }
-  goToHome(){
+  logout(){
+    this.service.logout()
     this.router.navigate(['/home'])
   }
 }

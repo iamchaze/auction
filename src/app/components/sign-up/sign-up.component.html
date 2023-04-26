@@ -1,43 +1,44 @@
-<div class="sign-up-form">
-  <h2>Create an Account</h2>
+<h2>Create an Account</h2>
+<form  [formGroup]="userData" (ngSubmit)="signUp(userData.value)" class="sign-up-form">
   <div class="input-field">
     <label for="fname">First Name</label>
-    <input type="fname" placeholder="Enter First Name" class="form-control" />
+    <input type="fname" placeholder="Enter First Name" class="form-control" formControlName="fname"/>
+    <!-- <div class="alert-msg" *ngIf="expression"></div> -->
   </div>
   <div class="input-field">
     <label for="lname">Last Name</label>
-    <input type="lname" placeholder="Enter Last Name" class="form-control" />
+    <input type="lname" placeholder="Enter Last Name" class="form-control" formControlName="lname"/>
   </div>
   <div class="input-field">
     <label for="email">Email</label>
-    <input type="email" placeholder="Enter Email" class="form-control" />
+    <input type="email" placeholder="Enter Email" class="form-control" formControlName="email"/>
   </div>
   <div class="input-field">
     <label for="contact">Contact Number</label>
-    <input type="contact" placeholder="Enter Contact Number" class="form-control" />
+    <input type="contact" placeholder="Enter Contact Number" class="form-control"formControlName="contact"/>
   </div>
   <div class="input-field">
     <label for="address">Address</label>
-    <input type="address" placeholder="Enter Address" class="form-control" />
+    <input type="address" placeholder="Enter Address" class="form-control" formControlName="address" />
     <br /><br /><br />
   </div>
   <div class="input-field">
     <label for="username">Username</label>
-    <input type="username" placeholder="Enter Username" class="form-control" />
+    <input type="username" placeholder="Enter Username" class="form-control" formControlName="username"/>
   </div>
   <div class="input-field">
     <label for="password">Password</label>
-    <input type="password" placeholder="Enter Password" class="form-control" />
+    <input type="password" placeholder="Enter Password" class="form-control" formControlName="password"/>
   </div>
   <div class="input-field">
     <label for="c-password">Confirm Password</label>
-    <input type="c-password" placeholder="Enter Confirmed Password" class="form-control" />
+    <input type="password" placeholder="Enter Confirmed Password" class="form-control" formControlName="cPassword"/>
   </div>
 
-  <button>Sign Up</button>
+  <button >Sign Up</button>
   <div class="login">
     <p>Already have an account?</p>
     <button (click)="navigateToLogin()" class="login-button">Login</button>
   </div>
 
-</div>
+</form>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalService } from 'src/app/shared/services/global.service';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +8,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router:Router){}
+  constructor(private router:Router, private service: GlobalService){}
+  username:any
+  password:any
+  userData:any = []
+  remember:boolean = false
+
   navigateToSignUp(){
     this.router.navigate(['/sign-up'])
   }
   login(){
-    this.router.navigate(['/browse'])
+    // console.log(this.userid, this.password);
+
+    this.service.getRecords("users").subscribe((res) =>{
+
+      this.userData = res
+      const matchingRecord = this.userData.filter(
+        (record:any) => {
+          return record.uid == this.username && record.upass == this.password
+        }
+      )
+        if(matchingRecord.length > 0)
+        // if(this.userData[0].uid == this.username && this.userData[0].upass == this.password)
+        {
+          this.service.login(this.username, this.remember)
+          this.router.navigate(['/browse'])
+        } else {
+          alert('Invalid Credentials')
+          this.username = ""
+          this.password = ""
+        }
+    })
   }
 }
+

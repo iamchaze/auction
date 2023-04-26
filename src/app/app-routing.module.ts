@@ -12,18 +12,20 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { BrowseComponent } from './components/browse/browse.component';
+import { LoginAuthGuard } from './shared/guard/login-auth.guard';
 
 const routes: Routes = [
-  { path: "", component:HomeComponent },
+  { path: "", component:BrowseComponent, canActivate:[LoginAuthGuard]},
+  { path: "", component:HomeComponent},
   { path: "home", component:HomeComponent },
-  { path: "browse", component:BrowseComponent },
-  { path: "header", component: HeaderComponent },
+  { path: "browse", component:BrowseComponent, canActivate:[LoginAuthGuard] },
+  { path: "header", component: HeaderComponent, canActivate:[LoginAuthGuard]  },
   { path: "sign-up", component:SignUpComponent },
-  { path: "bid-products", component:BidProductsComponent },
+  { path: "bid-products", component:BidProductsComponent, canActivate:[LoginAuthGuard]},
   { path: "login", component:LoginComponent },
-  { path: "profile", component:ProfileComponent },
-  { path: "saved-products", component:SavedProductsComponent },
-  { path: "view-products", component:ViewProductsComponent },
+  { path: "profile", component:ProfileComponent, canActivate:[LoginAuthGuard] },
+  { path: "saved-products", component:SavedProductsComponent, canActivate:[LoginAuthGuard] },
+  { path: "view-products", component:ViewProductsComponent, canActivate:[LoginAuthGuard] },
   { path: "**", component: PageNotFoundComponent },
 
 ];

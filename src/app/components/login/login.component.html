@@ -1,9 +1,11 @@
 <div class="login-form">
   <h2>Login</h2>
-  <label for="username">Username</label>
-  <input  class="inputbox" type="text" name="username" id="username" placeholder="Enter Username">
-  <label for="password">Password</label>
-  <input class="inputbox" type="password" name="password" id="password" placeholder="Enter Password">
+  <label class="label">Username</label>
+  <input  class="inputbox" type="text"   placeholder="Enter Username" [(ngModel)]="username" >
+  <label class="label">Password</label>
+  <input class="inputbox" type="password"   placeholder="Enter Password" [(ngModel)]="password">
+  <label class="checkbox"><input type="checkbox" [(ngModel)]="remember"> Remember Me</label>
+
     <button (click)="login()" class="button">Login</button>
     <div class="signup">
       <p>Don't have an Account?</p>
