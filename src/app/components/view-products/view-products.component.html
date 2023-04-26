@@ -1,1 +1,12 @@
-<p>view-products works!</p>
+<div class="products-grid">
+  <div class="card" style="width: 20rem;" *ngFor="let product of products" >
+    <div class="img-section">
+      <img [src]="product.productImage" class="card-img-top" >
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{product.productName}}</h5>
+      <p class="card-text">{{product.productDescription}}</p>
+      <a href="#" class="btn btn-primary" routerLink="bid-products" (click)="setPath(product.productId)">View Details</a>
+    </div>
+  </div>
+</div>

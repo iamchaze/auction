@@ -26,8 +26,8 @@ const routes: Routes = [
   { path: "profile", component:ProfileComponent, canActivate:[LoginAuthGuard] },
   { path: "saved-products", component:SavedProductsComponent, canActivate:[LoginAuthGuard] },
   { path: "view-products", component:ViewProductsComponent, canActivate:[LoginAuthGuard] },
+  { path: "view-products/:id", component:ViewProductsComponent, canActivate:[LoginAuthGuard] },
   { path: "**", component: PageNotFoundComponent },
-
 ];
 
 @NgModule({
