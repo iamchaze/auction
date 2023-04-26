@@ -33,7 +33,6 @@ export class GlobalService {
 
 
 
-
   // -----------------Autorization-------------------
   login(user:any, remember:boolean){
     if(remember){

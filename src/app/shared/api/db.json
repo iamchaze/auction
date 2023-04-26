@@ -1,26 +1,14 @@
 {
   "Users": [
     {
-      "firstName": "asdf",
-      "lastName": "asf",
-      "email": "klafs",
-      "contact": "lkja",
-      "address": "lkj",
-      "username": "lkj",
-      "password": "l",
-      "confirmPassword": "kjl",
+      "firstName": "viraj",
+      "lastName": "kale",
+      "email": "viraj@gmail.com",
+      "contact": "9876543210",
+      "address": "Pune",
+      "username": "viraj",
+      "password": "123",
       "id": 1
-    },
-    {
-      "firstName": "asdf",
-      "lastName": "asf",
-      "email": "klafs",
-      "contact": "lkja",
-      "address": "lkj",
-      "username": "lkj",
-      "password": "l",
-      "confirmPassword": "kjl",
-      "id": 2
     }
   ]
 }

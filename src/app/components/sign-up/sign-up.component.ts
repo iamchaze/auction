@@ -1,7 +1,8 @@
+
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { emailRegEx, nameRegEx, numberRegEx } from 'src/app/shared/common data/constants';
+import { emailRegEx, nameRegEx, numberRegEx, passwordRegEx, usernameRegEx } from 'src/app/shared/common data/constants';
 import { GlobalService } from 'src/app/shared/services/global.service';
 
 @Component({
@@ -21,43 +22,56 @@ export class SignUpComponent implements OnInit {
   userData:any
 
   constructor(private router:Router, private service:GlobalService, private formBuilder: FormBuilder){}
+  passwordMatchValidator(formgroup: FormGroup){
+    const password = formgroup.get('password')?.value
+    const cPassword = formgroup.get('cPassword')?.value
 
-
-  ngOnInit() {
-    this.userData = this.formBuilder.group(
-      {
-        fname: ['', Validators.required, Validators.pattern(nameRegEx)],
-        lname: ['', Validators.required, Validators.pattern(nameRegEx)],
-        email: ['', Validators.required, Validators.pattern(emailRegEx)],
-        contact: ['', Validators.required, Validators.pattern(numberRegEx)],
-        address: ['', Validators.required],
-        username: ['', Validators.required, Validators.pattern],
-      }
-    )
+    if(password != cPassword){
+      formgroup.get('cPassword')?.setErrors({mismatch:true})
+    } else {
+      formgroup.get('cPassword')?.setErrors(null)
+    }
   }
 
-  signUp(){
-    // const userData = {
-    //   "firstName":this.fname?.trim(),
-    //   "lastName":this.lname?.trim(),
-    //   "email":this.email?.trim(),
-    //   "contact":this.contact?.trim(),
-    //   "address":this.address?.trim(),
-    //   "username":this.username?.trim(),
-    //   "password":this.password?.trim(),
-    //   "confirmPassword":this.cPassword?.trim()
-    // }
-    // console.log(userData);
-    // this.service.addRecord("Users", userData).subscribe(
-    //   () =>{
-    //     alert("record added")
-    //   },
-    //   error => {
-    //     alert("something went wroing")
-    //   }
+  signUp(data:any){
+    const dataObj = {
+      "firstName":this.userData.get('fname').value,
+      "lastName":this.userData.get('lname').value,
+      "email":this.userData.get('email').value,
+      "contact":this.userData.get('contact').value,
+      "address":this.userData.get('address').value,
+      "username":this.userData.get('username').value,
+      "password":this.userData.get('password').value
+    }
+    console.log("fname",this.fname);
+    this.service.addRecord("Users", dataObj).subscribe(
+      () =>
+      {
+      alert("Account Created")
+      },
+      error => {
+        alert('something wrong happened')
+      }
+    )
+    this.router.navigate(['/login'])
+  }
 
-    // )
-    // this.router.navigate(['/login'])
+  ngOnInit() {
+
+    this.userData = this.formBuilder.group(
+      {
+        fname: ['', [Validators.required, Validators.pattern(nameRegEx)]],
+        lname: ['', [Validators.required, Validators.pattern(nameRegEx)]],
+        email: ['', [Validators.required, Validators.pattern(emailRegEx)]],
+        contact: ['', [Validators.required, Validators.pattern(numberRegEx)]],
+        address: ['', [Validators.required]],
+        username: ['', [Validators.required, Validators.pattern(usernameRegEx)]],
+        password: ['', [Validators.required, Validators.pattern(passwordRegEx)]],
+        cPassword: ['', [Validators.required  ]]
+      }, {
+        validator: this.passwordMatchValidator
+      }
+    )
   }
 
   navigateToLogin(){

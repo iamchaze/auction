@@ -33,6 +33,7 @@ h2{
 }
 .sign-up-form button:hover{
   background-color: rgb(77, 77, 77);
+  cursor: pointer;
 }
 p{
   margin: 0 5%;
@@ -43,6 +44,14 @@ p{
   color: black;
   border: 1px solid black;
 }
+.alert-msg{
+  width: 100%;
+  padding: 2% 5%;
+  color: red;
+}
+
+
+
 @media screen and (max-width: 750px) {
   .sign-up-form{
     width: 90%;

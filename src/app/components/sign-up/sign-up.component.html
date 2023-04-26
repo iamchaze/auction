@@ -1,41 +1,96 @@
 <h2>Create an Account</h2>
-<form  [formGroup]="userData" (ngSubmit)="signUp(userData.value)" class="sign-up-form">
+<form  [formGroup]="userData" (ngSubmit)="signUp(userData.value)"  class="sign-up-form">
   <div class="input-field">
     <label for="fname">First Name</label>
-    <input type="fname" placeholder="Enter First Name" class="form-control" formControlName="fname"/>
-    <!-- <div class="alert-msg" *ngIf="expression"></div> -->
+    <input type="fname" name="fname" placeholder="Enter First Name" class="form-control" formControlName="fname"/>
+    <div class="alert-msg" *ngIf="userData.get('fname').invalid && userData.get('fname').touched">
+      <small *ngIf="userData.get('fname').errors?.required" >
+        *First Name Cannot be Empty
+      </small>
+      <small *ngIf="userData.get('fname').errors?.pattern">
+        *3 to 15 characters required
+      </small>
+    </div>
   </div>
   <div class="input-field">
     <label for="lname">Last Name</label>
     <input type="lname" placeholder="Enter Last Name" class="form-control" formControlName="lname"/>
+    <div class="alert-msg" *ngIf="userData.get('lname').invalid && userData.get('lname').touched">
+      <small *ngIf="userData.get('lname').errors?.required" >
+        *Last Name Cannot be Empty
+      </small>
+      <small *ngIf="userData.get('lname').errors?.pattern">
+        *3 to 15 characters required
+      </small>
+    </div>
   </div>
   <div class="input-field">
     <label for="email">Email</label>
     <input type="email" placeholder="Enter Email" class="form-control" formControlName="email"/>
+    <div class="alert-msg" *ngIf="userData.get('email').invalid && userData.get('email').touched">
+      <small *ngIf="userData.get('email').errors?.required" >
+        *Email Cannot be Empty
+      </small>
+      <small *ngIf="userData.get('email').errors?.pattern">
+        *Invalid Email
+      </small>
+    </div>
   </div>
   <div class="input-field">
     <label for="contact">Contact Number</label>
     <input type="contact" placeholder="Enter Contact Number" class="form-control"formControlName="contact"/>
+    <div class="alert-msg" *ngIf="userData.get('contact').invalid && userData.get('contact').touched">
+      <small *ngIf="userData.get('contact').errors?.required" >
+        *Contact Number Cannot be Empty
+      </small>
+      <small *ngIf="userData.get('contact').errors?.pattern">
+        *Invalid Contact Number
+      </small>
+    </div>
   </div>
   <div class="input-field">
     <label for="address">Address</label>
     <input type="address" placeholder="Enter Address" class="form-control" formControlName="address" />
-    <br /><br /><br />
   </div>
+  <br><hr>
   <div class="input-field">
     <label for="username">Username</label>
     <input type="username" placeholder="Enter Username" class="form-control" formControlName="username"/>
+    <div class="alert-msg" *ngIf="userData.get('username').invalid && userData.get('username').touched">
+      <small *ngIf="userData.get('username').errors?.required" >
+        *Username Cannot be Empty
+      </small>
+      <small *ngIf="userData.get('username').errors?.pattern">
+        *Username should contain minimum 3 letters.
+      </small>
+    </div>
   </div>
   <div class="input-field">
     <label for="password">Password</label>
     <input type="password" placeholder="Enter Password" class="form-control" formControlName="password"/>
+    <div class="alert-msg" *ngIf="userData.get('password').invalid && userData.get('password').touched">
+      <small *ngIf="userData.get('password').errors?.required" >
+        *Password Cannot be Empty
+      </small>
+      <small *ngIf="userData.get('password').errors?.pattern">
+        *Password should be at least 3 characters long.
+      </small>
+    </div>
   </div>
   <div class="input-field">
     <label for="c-password">Confirm Password</label>
     <input type="password" placeholder="Enter Confirmed Password" class="form-control" formControlName="cPassword"/>
+    <div class="alert-msg" *ngIf="userData.get('cPassword').invalid && userData.get('cPassword').touched">
+      <small *ngIf="userData.get('cPassword').errors?.required" >
+        *Confirm Password Cannot be Empty
+      </small>
+      <small *ngIf="userData.get('cPassword').errors?.mismatch">
+        *Passwords do not match
+      </small>
+    </div>
   </div>
 
-  <button >Sign Up</button>
+  <button type="submit" [disabled] = "userData.invalid" >Sign Up</button>
   <div class="login">
     <p>Already have an account?</p>
     <button (click)="navigateToLogin()" class="login-button">Login</button>

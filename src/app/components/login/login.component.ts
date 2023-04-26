@@ -18,16 +18,17 @@ export class LoginComponent {
     this.router.navigate(['/sign-up'])
   }
   login(){
-    // console.log(this.userid, this.password);
+    // console.log(this.username, this.password);
 
     this.service.getRecords("users").subscribe((res) =>{
 
       this.userData = res
       const matchingRecord = this.userData.filter(
         (record:any) => {
-          return record.uid == this.username && record.upass == this.password
+          return record.username == this.username && record.password == this.password
         }
       )
+      // console.log(matchingRecord);
         if(matchingRecord.length > 0)
         // if(this.userData[0].uid == this.username && this.userData[0].upass == this.password)
         {
