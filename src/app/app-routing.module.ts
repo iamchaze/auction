@@ -15,18 +15,17 @@ import { BrowseComponent } from './components/browse/browse.component';
 import { LoginAuthGuard } from './shared/guard/login-auth.guard';
 
 const routes: Routes = [
-  { path: "", component:BrowseComponent, canActivate:[LoginAuthGuard]},
+  { path: "", component:ViewProductsComponent, canActivate:[LoginAuthGuard]},
   { path: "", component:HomeComponent},
   { path: "home", component:HomeComponent },
   { path: "browse", component:BrowseComponent, canActivate:[LoginAuthGuard] },
   { path: "header", component: HeaderComponent, canActivate:[LoginAuthGuard]  },
   { path: "sign-up", component:SignUpComponent },
-  { path: "bid-products", component:BidProductsComponent, canActivate:[LoginAuthGuard]},
+  { path: "bid-products/:id", component:BidProductsComponent, canActivate:[LoginAuthGuard]},
   { path: "login", component:LoginComponent },
   { path: "profile", component:ProfileComponent, canActivate:[LoginAuthGuard] },
   { path: "saved-products", component:SavedProductsComponent, canActivate:[LoginAuthGuard] },
   { path: "view-products", component:ViewProductsComponent, canActivate:[LoginAuthGuard] },
-  { path: "view-products/:id", component:ViewProductsComponent, canActivate:[LoginAuthGuard] },
   { path: "**", component: PageNotFoundComponent },
 ];
 

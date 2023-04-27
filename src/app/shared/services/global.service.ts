@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   databaseUrl = "http://localhost:3000"
 
@@ -24,25 +25,35 @@ export class GlobalService {
   }
 
   //Add a Record (POST)
-  addRecord(path:string, data:any){
+  addRecord(path:string, id:any){
     const url = `${this.databaseUrl}/${path}`
-    return this.http.post(url, data)
+    return this.http.post(url, id)
   }
 
+  //Delete a Record (DELETE)
+  deleteRecord(path:string, id:any){
+    const url = `${this.databaseUrl}/${path}/${id}`;
+    return this.http.delete(url)
+  }
 
-
-
+  //Edit a Record (PUT)
+  editRecord(path:string, data:any, id:any){
+    const url = `${this.databaseUrl}/${path}/${data.id}`
+    return this.http.put(url, data)
+  }
 
   // -----------------Autorization-------------------
   login(user:any, remember:boolean){
     if(remember){
-      localStorage.setItem("userkey", user)
+      localStorage.setItem("username", user)
+      sessionStorage.setItem("username", user)
     } else {
-      sessionStorage.setItem("userkey", user)
+      sessionStorage.setItem("username", user)
     }
   }
-  logout(){
-    sessionStorage?.removeItem("userkey")
-    localStorage?.removeItem("userkey")
+  logout(data:any){
+    sessionStorage?.removeItem("username")
+    localStorage?.removeItem("username")
+    this.router.navigate(['/home'])
   }
 }

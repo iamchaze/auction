@@ -10,5 +10,34 @@
       "password": "123",
       "id": 1
     }
+  ],
+  "Products": [
+    {
+      "id": 1,
+      "productName": "car",
+      "productCategory": "Cars",
+      "productDescription": "this is a car",
+      "productImage": "../../../assets/images/car1.jpg",
+      "productPrice": "$4000",
+      "savedProduct": false
+    },
+    {
+      "id": 2,
+      "productName": "car",
+      "productCategory": "Cars",
+      "productDescription": "this is a car",
+      "productImage": "../../../assets/images/car2.jpg",
+      "productPrice": "$5000",
+      "savedProduct": true
+    },
+    {
+      "id": 3,
+      "productName": "bike",
+      "productCategory": "Bikes",
+      "productDescription": "this is a bike",
+      "productImage": "../../../assets/images/bike1.jpg",
+      "productPrice": "$2000",
+      "savedProduct": true
+    }
   ]
 }

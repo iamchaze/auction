@@ -20,7 +20,8 @@ export class NavBarComponent {
     this.router.navigate(['/profile'])
   }
   logout(){
-    this.service.logout()
-    this.router.navigate(['/home'])
+    let d = "new"
+    this.service.logout(d)
+
   }
 }

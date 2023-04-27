@@ -12,7 +12,7 @@ export class LoginAuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):  boolean {
-    if(sessionStorage.getItem("userkey") == null && localStorage.getItem("userkey") == null){
+    if(sessionStorage.getItem("username") == null && localStorage.getItem("username") == null){
       this.router.navigate(['\home'])
       return false
     } else {
