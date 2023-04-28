@@ -19,7 +19,7 @@
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car1.jpg",
       "productPrice": "$4000",
-      "savedProduct": false
+      "savedProduct": true
     },
     {
       "id": 2,
@@ -37,7 +37,16 @@
       "productDescription": "this is a bike",
       "productImage": "../../../assets/images/bike1.jpg",
       "productPrice": "$2000",
-      "savedProduct": true
+      "savedProduct": false
+    },
+    {
+      "id": 4,
+      "productName": "bike",
+      "productCategory": "Bikes",
+      "productDescription": "this is a bike",
+      "productImage": "../../../assets/images/bike1.jpg",
+      "productPrice": "$2000",
+      "savedProduct": false
     }
   ]
 }

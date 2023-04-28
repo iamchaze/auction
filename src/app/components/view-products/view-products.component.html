@@ -1,6 +1,5 @@
 <app-nav-bar></app-nav-bar>
-<select name="category" class="form-control" id="category" aria-placeholder="filter" [(ngModel)]="selectedCategory"
-  (ngModelChange)="display()">
+<select name="category" class="" id="category" aria-placeholder="filter"  [(ngModel)]="category" (ngModelChange)="categorize(category)">
   <option *ngFor="let category of categories">{{ category }}</option>
 </select>
 <div class="products-grid">
@@ -13,7 +12,7 @@
       <p class="card-text">{{product.productDescription}}</p>
       <div class="card-buttons">
         <a class="btn btn-primary" routerLink="bid-products" (click)="setPath(product.id)">View Details</a>
-        <button class="btn btn-primary" (click)="saveProduct(product)">Save</button>
+        <button class="btn btn-primary" (click)="saveProduct(product.id)">Save</button>
       </div>
     </div>
   </div>

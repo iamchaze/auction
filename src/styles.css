@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('D:\FirstBit\Angular Project\auction\node_modules\bootstrap\dist\css\bootstrap.min.css');
 @import '~bootstrap/dist/css/bootstrap.css';
+@import '~font-awesome/css/font-awesome.css';
 :root{
   --color-primary: #b40033;
   --color-secondary:rgb(31, 30, 30);

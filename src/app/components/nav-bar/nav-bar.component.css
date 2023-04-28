@@ -5,8 +5,10 @@ div{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: rgb(173, 137, 137);
   padding: 1rem;
+  background-color: #252f3d;
+  height: 4rem;
+  align-items: center;
 }
 div button{
   background-color: transparent;
@@ -15,11 +17,13 @@ div button{
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 5px;
-
+  margin: auto;
+  align-items: center;
 }
 #logout{
-  background-color: red;
+  background-color: rgb(230, 29, 29);
   box-shadow: 0rem 0rem 0.5rem rgba(0,0,0,0.5);
+  padding: auto 40px;
 }
 div button:hover{
   border: 1px solid white;

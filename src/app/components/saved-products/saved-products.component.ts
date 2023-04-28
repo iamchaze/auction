@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/shared/services/global.service';
@@ -9,10 +10,11 @@ import { GlobalService } from 'src/app/shared/services/global.service';
 })
 export class SavedProductsComponent implements OnInit {
 
-constructor(private service: GlobalService, private router:Router){}
+constructor(private service: GlobalService, private router:Router, private location:Location){}
 
   allProducts:any
   savedProducts:any
+
   ngOnInit(): void {
     this.service.getRecords("Products").subscribe((result) =>
       {
@@ -24,11 +26,20 @@ constructor(private service: GlobalService, private router:Router){}
         // console.log(this.savedProducts);
 
       })
-
-
   }
   setPath(id:any){
     this.router.navigate(['bid-products',id])
   }
 
+  unsave(id:any){
+    const tempObj = this.savedProducts.filter((product:any) => {
+      return id === product.id
+    })
+    tempObj[0].savedProduct = false
+    this.service.editRecord("Products", tempObj[0], id).subscribe((result) => {
+      alert("Product Unsaved")
+    })
+
+    this.location.go(this.location.path())
+  }
 }

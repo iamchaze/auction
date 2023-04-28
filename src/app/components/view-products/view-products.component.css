@@ -1,15 +1,20 @@
+
 .products-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 40px;
   width: 90%;
   margin: 3% auto;
+  padding: auto;
+}
+.card{
+  margin: auto;
+  padding: auto;
 }
 .img-section{
   width: 19.9rem;
   height: 20rem;
   margin: auto;
-
 }
 .card-img-top{
   width: 100%;
@@ -22,4 +27,21 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+
+@media (max-width:1500px){
+  .products-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width:1150px){
+  .products-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width:700px){
+  .products-grid{
+    grid-template-columns: 1fr;
+  }
 }

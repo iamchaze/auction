@@ -19,10 +19,14 @@ export class ProfileComponent implements OnInit {
   contact:any
   address:any
   username:any
+  name:any
 
   ngOnInit() {
-    this.currentUsername = sessionStorage.getItem('username');
-    // console.log(this.currentUsername);
+
+    (() => {
+      this.currentUsername = sessionStorage.length > 0 ? sessionStorage.getItem('username') : localStorage.getItem('username');
+    })();
+
     this.service.getRecords('Users').subscribe(result =>
       {
         this.usersData = result
@@ -35,6 +39,8 @@ export class ProfileComponent implements OnInit {
         this.email = this.currentUserData[0].email
         this.contact = this.currentUserData[0].contact
         this.address = this.currentUserData[0].address
+        this.name = `${this.firstName} ${this.lastName}`
       })
+
   }
 }
