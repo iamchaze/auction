@@ -30,7 +30,6 @@ export class LoginComponent {
       )
       // console.log(matchingRecord);
         if(matchingRecord.length > 0)
-        // if(this.userData[0].uid == this.username && this.userData[0].upass == this.password)
         {
           this.service.login(this.username, this.remember)
           this.router.navigate(['/view-products'])
