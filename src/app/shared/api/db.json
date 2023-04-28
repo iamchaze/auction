@@ -8,7 +8,19 @@
       "address": "Pune",
       "username": "viraj",
       "password": "123",
-      "id": 1
+      "id": 1,
+      "savedProductsList": []
+    },
+    {
+      "firstName": "manas",
+      "lastName": "kirad",
+      "email": "manas@gmail.com",
+      "contact": "9876543210",
+      "address": "Pune",
+      "username": "manas",
+      "password": "123",
+      "id": 2,
+      "savedProductsList": []
     }
   ],
   "Products": [
@@ -19,7 +31,7 @@
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car1.jpg",
       "productPrice": "$4000",
-      "savedProduct": true
+      "savedProduct": false
     },
     {
       "id": 2,
@@ -28,7 +40,7 @@
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car2.jpg",
       "productPrice": "$5000",
-      "savedProduct": true
+      "savedProduct": false
     },
     {
       "id": 3,

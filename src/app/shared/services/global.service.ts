@@ -21,7 +21,7 @@ export class GlobalService {
   //Get Single Record (GET)
   getSingleRecord(path:string, id:any){
     const url = `${this.databaseUrl}/${path}/${id}`
-    this.http.get(url)
+    return  this.http.get(url)
   }
 
   //Add a Record (POST)
@@ -43,17 +43,20 @@ export class GlobalService {
   }
 
   // -----------------Autorization-------------------
-  login(user:any, remember:boolean){
+  login(user:any, remember:boolean, userid:any){
     if(remember){
       localStorage.setItem("username", user)
-      sessionStorage.setItem("username", user)
+      localStorage.setItem("userid", userid)
     } else {
       sessionStorage.setItem("username", user)
+      sessionStorage.setItem("userid", userid)
     }
   }
   logout(data:any){
     sessionStorage?.removeItem("username")
+    sessionStorage?.removeItem("userid")
     localStorage?.removeItem("username")
+    localStorage?.removeItem("userid")
     this.router.navigate(['/home'])
   }
 }

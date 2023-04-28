@@ -12,6 +12,7 @@ export class LoginComponent {
   username:any
   password:any
   userData:any = []
+  userid:any
   remember:boolean = false
 
   navigateToSignUp(){
@@ -28,10 +29,12 @@ export class LoginComponent {
           return record.username == this.username && record.password == this.password
         }
       )
-      // console.log(matchingRecord);
+      this.userid = matchingRecord[0].id
+      console.log(this.userid);
+
         if(matchingRecord.length > 0)
         {
-          this.service.login(this.username, this.remember)
+          this.service.login(this.username, this.remember, this.userid)
           this.router.navigate(['/view-products'])
         } else {
           alert('Invalid Credentials')

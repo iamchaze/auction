@@ -9,27 +9,22 @@ import { GlobalService } from 'src/app/shared/services/global.service';
 })
 export class NavBarComponent implements OnInit{
   constructor(private router:Router, private service: GlobalService){}
-  currentUser:any
+  currentUserId:any
   username:any
   userData:any
   allUsers:any
   ngOnInit(): void {
 
     if(sessionStorage.length > 0){
-      this.currentUser = sessionStorage.getItem('username')
+      this.currentUserId = sessionStorage.getItem('userid')
     } else {
-      this.currentUser = localStorage.getItem('username')
+      this.currentUserId = localStorage.getItem('userid')
     }
-    this.service.getRecords("Users").subscribe((result) =>{
-      this.allUsers = result
-      this.userData = this.allUsers.filter( (user:any) => {
-        return user.username == this.currentUser
-      })
-      this.username = this.userData[0].username.toUpperCase()
+    this.service.getSingleRecord("Users", this.currentUserId).subscribe((result) => {
+      this.userData = result
+      this.username = this.userData.username.toUpperCase()
     })
   }
-
-
   goToViewProducts(){
     this.router.navigate(['/view-products'])
   }
