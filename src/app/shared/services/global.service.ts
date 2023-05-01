@@ -53,6 +53,7 @@ export class GlobalService {
     }
   }
   logout(data:any){
+    confirm("Do You Really Want to Logout?")
     sessionStorage?.removeItem("username")
     sessionStorage?.removeItem("userid")
     localStorage?.removeItem("username")

@@ -18,7 +18,7 @@ import { BrowseComponent } from './components/browse/browse.component';
 import { HttpClientModule } from "@angular/common/http"
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { CommonModule } from '@angular/common';
     PageNotFoundComponent,
     HomeComponent,
     HeaderComponent,
-    BrowseComponent
+    BrowseComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

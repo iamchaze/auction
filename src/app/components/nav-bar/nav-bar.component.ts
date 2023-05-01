@@ -38,6 +38,4 @@ export class NavBarComponent implements OnInit{
     let d = "new"
     this.service.logout(d)
   }
-
-
 }

@@ -9,18 +9,36 @@
       "username": "viraj",
       "password": "123",
       "id": 1,
-      "savedProductsList": []
+      "savedProductsIdList": [
+        2,
+        3,
+        1,
+        4
+      ]
     },
     {
-      "firstName": "manas",
-      "lastName": "kirad",
-      "email": "manas@gmail.com",
+      "firstName": "gaurav",
+      "lastName": "ujgare",
+      "email": "gaurav@gmail.com",
       "contact": "9876543210",
       "address": "Pune",
-      "username": "manas",
+      "username": "gaurav",
       "password": "123",
-      "id": 2,
-      "savedProductsList": []
+      "id": 3,
+      "savedProductsIdList": [
+        2
+      ]
+    },
+    {
+      "firstName": "satyam",
+      "lastName": "gaikwad",
+      "email": "satyam123@gmail.com",
+      "contact": "9025242629",
+      "address": "bharti vidaypith katraj pune",
+      "username": "satyam123",
+      "password": "satyam234",
+      "id": 4,
+      "savedProductsIdList": []
     }
   ],
   "Products": [
@@ -31,7 +49,7 @@
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car1.jpg",
       "productPrice": "$4000",
-      "savedProduct": false
+      "isSaved": false
     },
     {
       "id": 2,
@@ -40,7 +58,7 @@
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car2.jpg",
       "productPrice": "$5000",
-      "savedProduct": false
+      "isSaved": false
     },
     {
       "id": 3,
@@ -49,7 +67,7 @@
       "productDescription": "this is a bike",
       "productImage": "../../../assets/images/bike1.jpg",
       "productPrice": "$2000",
-      "savedProduct": false
+      "isSaved": false
     },
     {
       "id": 4,
@@ -58,7 +76,7 @@
       "productDescription": "this is a bike",
       "productImage": "../../../assets/images/bike1.jpg",
       "productPrice": "$2000",
-      "savedProduct": false
+      "isSaved": false
     }
   ]
 }
