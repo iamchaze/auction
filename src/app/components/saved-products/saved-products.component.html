@@ -1,16 +1,26 @@
 <app-nav-bar></app-nav-bar>
-<div class="products-grid">
-  <div class="card" style="width: 20rem;" *ngFor="let product of savedProducts">
-    <div class="img-section">
-      <img [src]="product.productImage" class="card-img-top">
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">{{product.productName}}</h5>
-      <p class="card-text">{{product.productDescription}}</p>
-      <div class="card-buttons">
-        <a class="btn btn-primary" routerLink="bid-products" (click)="setPath(product.id)">View Details</a>
-        <a class="btn btn-primary" (click)="unsave(product.id)">Unsave</a>
+<ng-template #one>
+  <div class="products-grid">
+    <div class="card" style="width: 20rem;" *ngFor="let product of savedProducts">
+      <div class="img-section">
+        <img [src]="product.productImage" class="card-img-top">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{product.productName}}</h5>
+        <p class="card-text">{{product.productDescription}}</p>
+        <div class="card-buttons">
+          <a class="btn btn-primary" routerLink="bid-products" (click)="setPath(product.id)">View Details</a>
+          <a class="btn btn-primary" (click)="unsave(product.id)">Unsave</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+</ng-template>
+<ng-template #two>
+  <div><h3>No saved Products</h3></div>
+</ng-template>
+
+
+<p *ngIf="flag; then one; else two"></p>
+

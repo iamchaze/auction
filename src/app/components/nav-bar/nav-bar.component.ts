@@ -14,7 +14,6 @@ export class NavBarComponent implements OnInit{
   userData:any
   allUsers:any
   ngOnInit(): void {
-
     if(sessionStorage.length > 0){
       this.currentUserId = sessionStorage.getItem('userid')
     } else {

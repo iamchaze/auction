@@ -19,7 +19,7 @@ constructor(private service: GlobalService, private router:Router, private locat
   savedProductsList:any
   productObj:any
   userObj:any
-
+  flag:any
   ngOnInit(): void {
       if(sessionStorage.length > 0){
         this.currentUserId = sessionStorage.getItem('userid')
@@ -38,8 +38,15 @@ constructor(private service: GlobalService, private router:Router, private locat
               }
             }
           }
+          if(this.savedProducts.length){
+            this.flag = true
+          } else {
+            this.flag = false
+          }
         })
+
       })
+
   }
 
   setPath(id:any){
@@ -51,15 +58,19 @@ constructor(private service: GlobalService, private router:Router, private locat
    this.service.getSingleRecord("Products",id).subscribe((result) => {
     this.productObj = result
     this.productObj.isSaved = false
-    this.service.editRecord("Products",this.productObj,id).subscribe((result) => {
+    this.service.editRecord("Products",this.productObj).subscribe((result) => {
       alert("Product Unsaved");
     })
    })
    this.service.getSingleRecord("Users", this.currentUserId).subscribe((result) => {
     this.userObj = result
-    console.log(this.userObj);
-    this.userObj
-   })
+    const index = this.userObj.savedProductsIdList.indexOf(id)
+    this.userObj.savedProductsIdList.splice(index, 1)
+    this.service.editRecord("Users",this.userObj).subscribe((result) => {
 
+    })
+
+   })
+   this.router.navigate(['saved-products'])
   }
 }

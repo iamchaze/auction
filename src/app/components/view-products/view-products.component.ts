@@ -28,7 +28,7 @@ export class ViewProductsComponent implements OnInit {
         this.categories.push(this.allProducts[i].productCategory);
       }
       this.categories = Array.from(new Set(this.categories));
-      // console.log(this.categories);
+
     });
   }
 
@@ -70,7 +70,7 @@ export class ViewProductsComponent implements OnInit {
       //Make array values distintive(Non repetitive)
       this.tempUsersObj.savedProductsIdList = Array.from(new Set(this.tempUsersObj.savedProductsIdList));
       //edit the record in the DB
-      this.service.editRecord("Users",this.tempUsersObj, this.tempUsersObj.id).subscribe((result) => {
+      this.service.editRecord("Users",this.tempUsersObj).subscribe((result) => {
         alert("Product Saved")
       })
 
@@ -80,8 +80,8 @@ export class ViewProductsComponent implements OnInit {
         //Change isSaved value to true in temp obj
         this.tempProductsObj.isSaved = true
         //Update the record in db
-        this.service.editRecord("Products", this.tempProductsObj, id).subscribe((result) => {
-          console.log(result);
+        this.service.editRecord("Products", this.tempProductsObj).subscribe((result) => {
+
         })
       })
 

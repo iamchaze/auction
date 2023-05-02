@@ -10,10 +10,7 @@
       "password": "123",
       "id": 1,
       "savedProductsIdList": [
-        2,
-        3,
-        1,
-        4
+        1
       ]
     },
     {
@@ -26,7 +23,8 @@
       "password": "123",
       "id": 3,
       "savedProductsIdList": [
-        2
+        3,
+        4
       ]
     },
     {
@@ -39,6 +37,19 @@
       "password": "satyam234",
       "id": 4,
       "savedProductsIdList": []
+    },
+    {
+      "firstName": "vidyut",
+      "lastName": "karajwad",
+      "email": "vidyut@gmail.com",
+      "contact": "8282828299",
+      "address": "katraj pune",
+      "username": "vidyut",
+      "password": "vidyut",
+      "id": 5,
+      "savedProductsIdList": [
+        1
+      ]
     }
   ],
   "Products": [
@@ -48,8 +59,9 @@
       "productCategory": "Cars",
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car1.jpg",
-      "productPrice": "$4000",
-      "isSaved": false
+      "productPrice": 35000,
+      "isSaved": true,
+      "HighestBidderId": 5
     },
     {
       "id": 2,
@@ -57,8 +69,9 @@
       "productCategory": "Cars",
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car2.jpg",
-      "productPrice": "$5000",
-      "isSaved": false
+      "productPrice": 5000,
+      "isSaved": false,
+      "HighestBidderId": 0
     },
     {
       "id": 3,
@@ -66,8 +79,9 @@
       "productCategory": "Bikes",
       "productDescription": "this is a bike",
       "productImage": "../../../assets/images/bike1.jpg",
-      "productPrice": "$2000",
-      "isSaved": false
+      "productPrice": 50000,
+      "isSaved": false,
+      "HighestBidderId": 5
     },
     {
       "id": 4,
@@ -75,8 +89,9 @@
       "productCategory": "Bikes",
       "productDescription": "this is a bike",
       "productImage": "../../../assets/images/bike1.jpg",
-      "productPrice": "$2000",
-      "isSaved": false
+      "productPrice": 3000,
+      "isSaved": false,
+      "HighestBidderId": 0
     }
   ]
 }

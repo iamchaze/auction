@@ -1,15 +1,33 @@
 <app-nav-bar></app-nav-bar>
 <div class="page-grid">
   <div>
-    <img [src]="imagePath" alt="">
+    <label for="image">Full Size Image</label>
+    <img [src]="imagePath" >
   </div>
   <div>
     <h2> {{productName}} </h2>
-    <p class="product-description"> {{productDescription}} </p>
-    <p class="product-category"> {{productCategory}} </p>
+    <p class="product-description">Description: {{productDescription}} </p>
+    <p class="product-category">Category: {{productCategory}} </p>
   </div>
   <div>
-    <p class="bid-section"> {{ productPrice }} </p>
+    <p class="bid-section">Highest Bid Price: ₹{{ productPrice }} </p>
   </div>
+  <div>
+    <p>Highest Bidder Name: {{highestBidderName}} </p>
+  </div>
+  <div>
+    <p>Bid Winner: {{bidWinner}} </p>
+  </div>
+  <div>
+    <label for="">Auction window:</label>
+    <p> {{auctionWindow |  date:"mediumDate"}} </p>
+  </div>
+  <form  ngForm #myForm="ngForm" (ngSubmit) = "bidPriceData(myForm.value)">
+    <label for="">Your Bid</label>
+    <input type="amount" ngModel #refName ="ngModel" name="price"  [pattern] = "price"  class="" >
+    <small *ngIf="refName.hasError('pattern')">
+      Invalid Bid Value
+    </small>
+    <button class="btn btn-primary" type="submit" [disabled] = "myForm.invalid" >Submit Your Bid</button>
+  </form>
 </div>
-

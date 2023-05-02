@@ -37,7 +37,7 @@ export class GlobalService {
   }
 
   //Edit a Record (PUT)
-  editRecord(path:string, data:any, id:any){
+  editRecord(path:string, data:any){
     const url = `${this.databaseUrl}/${path}/${data.id}`
     return this.http.put(url, data)
   }
@@ -53,11 +53,15 @@ export class GlobalService {
     }
   }
   logout(data:any){
-    confirm("Do You Really Want to Logout?")
-    sessionStorage?.removeItem("username")
-    sessionStorage?.removeItem("userid")
-    localStorage?.removeItem("username")
-    localStorage?.removeItem("userid")
-    this.router.navigate(['/home'])
+    if(confirm("Do you really want to logout?")){
+      sessionStorage?.removeItem("username")
+      sessionStorage?.removeItem("userid")
+      localStorage?.removeItem("username")
+      localStorage?.removeItem("userid")
+      this.router.navigate(['/home'])
+    } else {
+
+    }
+
   }
 }

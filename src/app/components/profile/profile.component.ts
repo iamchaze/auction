@@ -22,14 +22,15 @@ export class ProfileComponent implements OnInit {
   name:any
 
   ngOnInit() {
-    (() => {
-      this.currentUserId = sessionStorage.length > 0 ? sessionStorage.getItem('userid') : localStorage.getItem('userid');
-    })();
+    if(sessionStorage.length > 0){
+       this.currentUserId =  sessionStorage.getItem('userid')
+    } else {
+      this.currentUserId = localStorage.getItem('userid')
+    }
 
     this.service.getSingleRecord("Users", this.currentUserId).subscribe((result) =>
     {
       this.currentUserData = result
-      console.log(this.currentUserData);
       this.username = this.currentUserData.username;
       this.firstName = this.currentUserData.firstName;
       this.lastName = this.currentUserData.lastName;

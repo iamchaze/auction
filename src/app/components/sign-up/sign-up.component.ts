@@ -41,7 +41,8 @@ export class SignUpComponent implements OnInit {
       "contact":this.userData.get('contact').value,
       "address":this.userData.get('address').value,
       "username":this.userData.get('username').value,
-      "password":this.userData.get('password').value
+      "password":this.userData.get('password').value,
+      "savedProductsIdList": []
     }
     console.log("fname",this.fname);
     this.service.addRecord("Users", dataObj).subscribe(
