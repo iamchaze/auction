@@ -20,8 +20,9 @@ export class SignUpComponent implements OnInit {
   password:any
   cPassword:any
   userData:any
-
+  showPasswordFlag:any = "password"
   constructor(private router:Router, private service:GlobalService, private formBuilder: FormBuilder){}
+
   passwordMatchValidator(formgroup: FormGroup){
     const password = formgroup.get('password')?.value
     const cPassword = formgroup.get('cPassword')?.value
@@ -66,6 +67,7 @@ export class SignUpComponent implements OnInit {
         email: ['', [Validators.required, Validators.pattern(emailRegEx)]],
         contact: ['', [Validators.required, Validators.pattern(numberRegEx)]],
         address: ['', [Validators.required]],
+        photo: ['', ],
         username: ['', [Validators.required, Validators.pattern(usernameRegEx)]],
         password: ['', [Validators.required, Validators.pattern(passwordRegEx)]],
         cPassword: ['', [Validators.required  ]]
@@ -78,4 +80,13 @@ export class SignUpComponent implements OnInit {
   navigateToLogin(){
     this.router.navigate(['/login'])
   }
+
+  showPassword(){
+    if(this.showPasswordFlag == "password"){
+      this.showPasswordFlag = "text"
+    } else {
+      this.showPasswordFlag = "password"
+    }
+  }
+
 }

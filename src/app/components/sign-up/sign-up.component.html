@@ -52,6 +52,10 @@
     <label for="address">Address</label>
     <input type="address" placeholder="Enter Address" class="form-control" formControlName="address" />
   </div>
+  <!-- <div class="input-field">
+    <label for="">Upload your Photo</label>
+    <input type="file" formControlName="photo">
+  </div> -->
   <br><hr>
   <div class="input-field">
     <label for="username">Username</label>
@@ -67,7 +71,8 @@
   </div>
   <div class="input-field">
     <label for="password">Password</label>
-    <input type="password" placeholder="Enter Password" class="form-control" formControlName="password"/>
+    <input [type]="showPasswordFlag"  placeholder="Enter Password" class="form-control" formControlName="password" #password/>
+    <i class="fa fa-eye" aria-hidden="true" (click)="showPassword()" ></i>
     <div class="alert-msg" *ngIf="userData.get('password').invalid && userData.get('password').touched">
       <small *ngIf="userData.get('password').errors?.required" >
         *Password Cannot be Empty
@@ -77,9 +82,11 @@
       </small>
     </div>
   </div>
+
   <div class="input-field">
     <label for="c-password">Confirm Password</label>
-    <input type="password" placeholder="Enter Confirmed Password" class="form-control" formControlName="cPassword"/>
+    <input [type]="showPasswordFlag" placeholder="Enter Confirmed Password" class="form-control" formControlName="cPassword" #cPassword/>
+    <i class="fa fa-eye" aria-hidden="true" (click)="showPassword()" ></i>
     <div class="alert-msg" *ngIf="userData.get('cPassword').invalid && userData.get('cPassword').touched">
       <small *ngIf="userData.get('cPassword').errors?.required" >
         *Confirm Password Cannot be Empty

@@ -49,9 +49,18 @@ p{
   padding: 2% 5%;
   color: red;
 }
-
-
-
+.pic-preview{
+  width: 100px;
+}
+.input-field{
+  position: relative;
+}
+.fa-eye{
+  color: grey;
+  position: absolute;
+  right: 35px;
+  top: 55px;
+}
 @media screen and (max-width: 750px) {
   .sign-up-form{
     width: 90%;

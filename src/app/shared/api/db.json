@@ -50,6 +50,17 @@
       "savedProductsIdList": [
         1
       ]
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "contact": "",
+      "address": "",
+      "username": "",
+      "password": "",
+      "savedProductsIdList": [],
+      "id": 6
     }
   ],
   "Products": [
@@ -59,7 +70,7 @@
       "productCategory": "Cars",
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car1.jpg",
-      "productPrice": 35000,
+      "productPrice": 45000,
       "isSaved": true,
       "HighestBidderId": 5
     },

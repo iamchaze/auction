@@ -15,6 +15,7 @@ p{
   margin: 5%;
 }
 .login-form{
+  position: relative;
   margin: 5% auto;
   padding: 1%;
   width: 70%;
@@ -58,7 +59,11 @@ p{
   width: 100%;
   padding: 2% 15%;
 }
-
+.fa-eye{
+  position: absolute;
+  right: 20vh;
+  top: 29vh;
+}
 @media screen and (max-width: 750px) {
   .login-form{
     width: 90%;

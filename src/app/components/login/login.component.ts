@@ -14,7 +14,7 @@ export class LoginComponent {
   userData:any = []
   userid:any
   remember:boolean = false
-  showPasswordToggle = false
+  showPasswordFlag:any = "password"
 
   navigateToSignUp(){
     this.router.navigate(['/sign-up'])
@@ -43,9 +43,12 @@ export class LoginComponent {
         }
     })
   }
-
   showPassword(){
-
+    if(this.showPasswordFlag == "password"){
+      this.showPasswordFlag = "text"
+    } else {
+      this.showPasswordFlag = "password"
+    }
   }
 }
 

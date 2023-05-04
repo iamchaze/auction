@@ -41,4 +41,7 @@ export class ProfileComponent implements OnInit {
     })
 
   }
+  handle(event:any){
+    console.log(event);
+  }
 }

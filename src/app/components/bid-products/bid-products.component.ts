@@ -24,16 +24,18 @@ export class BidProductsComponent implements OnInit{
   auctionWindow:any
   highestBidderId:any
   highestBid:any
-  date:string = "2023/05/03"
+  date:string = "2023/05/02"
   highestBidderData:any
   highestBidderName:any
-  bidWinner:any = "Bidding is in progress..."
+  bidWinner:any
   currentHighestBidder:any
+  currentTime:any
   ngOnInit(){
-    setInterval(() => {
+    setInterval((now:any) => {
       this.auctionWindow = new Date(this.date)
     }, 1000);
-
+    this.auctionWindow = new Date(this.date)
+    this.currentTime = new Date()
     this.currentId = this.activatedRoute.snapshot.paramMap.get("id");
     this.service.getSingleRecord("Users", this.currentId).subscribe((result) => {this.currentUserData = result})
     this.service.getRecords("Products").subscribe((result) =>{
@@ -47,12 +49,20 @@ export class BidProductsComponent implements OnInit{
       this.productPrice = this.currentRecord.productPrice
       this.service.getSingleRecord("Users", this.currentRecord.HighestBidderId).subscribe((result) => { this.highestBidderData = result
         this.highestBidderName = `${this.highestBidderData.firstName} ${this.highestBidderData.lastName}`
+        this.currentTime = parseInt(`${this.currentTime.getFullYear()}${this.currentTime.getMonth()}${this.currentTime.getDate()}`)
+        this.auctionWindow = parseInt(`${this.auctionWindow.getFullYear()}${this.auctionWindow.getMonth()}${this.auctionWindow.getDate()}`)
+        console.log("Current Date", this.currentTime);
+        console.log("auction window:",this.auctionWindow);
+        if(this.auctionWindow > this.currentTime){
+          this.bidWinner = "Bidding is in Progress..."
+        } else {
+          this.bidWinner = this.highestBidderName
+          console.log(this.highestBidderName);
+        }
       })
     })
-
-
-
   }
+
   bidPriceData(value:any){
     const currentBid = parseInt(value.price)
     if(sessionStorage.length > 0){

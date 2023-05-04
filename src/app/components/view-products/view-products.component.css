@@ -1,10 +1,10 @@
 
 .products-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 40px;
   width: 90%;
-  margin: 3% auto;
+  margin: 1% auto;
   padding: auto;
 }
 .card{
@@ -27,6 +27,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.tag{
+  position: absolute;
+  top:5px;
+  right:8px;
+  background-color: gold;
+  padding: 1%;
+  border-radius: 10px
 }
 
 

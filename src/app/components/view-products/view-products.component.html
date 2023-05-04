@@ -13,6 +13,7 @@
 <div class="products-grid">
   <div class="card" style="width: 20rem;" *ngFor="let product of allProducts | filter:term">
     <div class="img-section">
+      <div class="tag"><i class="fa fa-tag" aria-hidden="true"></i> ${{product.productPrice}}</div>
       <img [src]="product.productImage" class="card-img-top">
     </div>
     <div class="card-body">
