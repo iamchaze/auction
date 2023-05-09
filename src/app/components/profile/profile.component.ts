@@ -39,7 +39,6 @@ export class ProfileComponent implements OnInit {
       this.address = this.currentUserData.address;
       this.name = `${this.firstName} ${this.lastName}`
     })
-
   }
   handle(event:any){
     console.log(event);

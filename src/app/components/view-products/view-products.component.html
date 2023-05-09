@@ -1,15 +1,14 @@
-<app-nav-bar></app-nav-bar>
 <div class="filter-section">
   <div class="dropdown">
-    <select name="category" class="" id="category" aria-placeholder="filter"  [(ngModel)]="category" (ngModelChange)="categorize(category)">
+    <p>Category:  </p>
+      <select name="category" class="form-control filter" id="category" aria-placeholder="filter"  [(ngModel)]="category" (ngModelChange)="categorize(category)">
       <option *ngFor="let category of categories">{{ category }}</option>
     </select>
   </div>
   <div class="search">
-    <input type="text" class="search" [(ngModel)]="term">
+    <input type="text" class="search form-control" placeholder="Search" [(ngModel)]="term">
   </div>
 </div>
-
 <div class="products-grid">
   <div class="card" style="width: 20rem;" *ngFor="let product of allProducts | filter:term">
     <div class="img-section">

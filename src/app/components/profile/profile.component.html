@@ -1,3 +1,11 @@
-<app-nav-bar></app-nav-bar>
-<h2> {{name}} </h2>
-
+<section>
+  <div><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+<div>
+  <h2 class="name"> {{name | uppercase}} </h2>
+  <p class="address"> {{address}} </p>
+</div>
+<div>
+  <p class="email">Email Id - {{email}} </p>
+  <p class="contact">Contact No. - {{contact}} </p>
+</div>
+</section>

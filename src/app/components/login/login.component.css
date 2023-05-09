@@ -57,12 +57,12 @@ p{
 .checkbox{
   margin-top: 1%;
   width: 100%;
-  padding: 2% 15%;
+  padding: 0% 15%;
 }
-.fa-eye{
-  position: absolute;
-  right: 20vh;
-  top: 29vh;
+.show-pwd{
+  width: 70%;
+  text-align: end;
+  margin: 10px auto;
 }
 @media screen and (max-width: 750px) {
   .login-form{

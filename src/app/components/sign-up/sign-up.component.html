@@ -72,7 +72,6 @@
   <div class="input-field">
     <label for="password">Password</label>
     <input [type]="showPasswordFlag"  placeholder="Enter Password" class="form-control" formControlName="password" #password/>
-    <i class="fa fa-eye" aria-hidden="true" (click)="showPassword()" ></i>
     <div class="alert-msg" *ngIf="userData.get('password').invalid && userData.get('password').touched">
       <small *ngIf="userData.get('password').errors?.required" >
         *Password Cannot be Empty
@@ -86,7 +85,6 @@
   <div class="input-field">
     <label for="c-password">Confirm Password</label>
     <input [type]="showPasswordFlag" placeholder="Enter Confirmed Password" class="form-control" formControlName="cPassword" #cPassword/>
-    <i class="fa fa-eye" aria-hidden="true" (click)="showPassword()" ></i>
     <div class="alert-msg" *ngIf="userData.get('cPassword').invalid && userData.get('cPassword').touched">
       <small *ngIf="userData.get('cPassword').errors?.required" >
         *Confirm Password Cannot be Empty
@@ -96,7 +94,7 @@
       </small>
     </div>
   </div>
-
+  <p class="show-pwd"><i class="fa fa-eye" aria-hidden="true" (click)="showPassword()" ></i>Show Password</p>
   <button type="submit" [disabled] = "userData.invalid" >Sign Up</button>
   <div class="login">
     <p>Already have an account?</p>

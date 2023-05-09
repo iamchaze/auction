@@ -4,6 +4,10 @@
   --color-ternary: rgb(192, 192, 99);
   --color-white: #ffffff;
 }
+body{
+  margin: 0;
+  padding: 0;
+}
 .card-body{
   margin: 0;
   padding: 0;
@@ -11,14 +15,15 @@
 }
 .card{
   width: 100%;
-
-
-
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
 }
 .card-header{
-  background-color:#141920;
   width: 100%;
 }
 .card-footer{
   background-color:var(--color-secondary);
 }
+

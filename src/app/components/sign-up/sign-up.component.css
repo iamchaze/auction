@@ -55,11 +55,10 @@ p{
 .input-field{
   position: relative;
 }
-.fa-eye{
-  color: grey;
-  position: absolute;
-  right: 35px;
-  top: 55px;
+.show-pwd{
+  width: 90%;
+  text-align: end;
+  margin: 10px;
 }
 @media screen and (max-width: 750px) {
   .sign-up-form{

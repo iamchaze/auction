@@ -70,9 +70,9 @@
       "productCategory": "Cars",
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car1.jpg",
-      "productPrice": 45000,
+      "productPrice": 50000,
       "isSaved": true,
-      "HighestBidderId": 5
+      "HighestBidderId": 1
     },
     {
       "id": 2,
@@ -80,9 +80,9 @@
       "productCategory": "Cars",
       "productDescription": "this is a car",
       "productImage": "../../../assets/images/car2.jpg",
-      "productPrice": 5000,
+      "productPrice": 690000,
       "isSaved": false,
-      "HighestBidderId": 0
+      "HighestBidderId": 1
     },
     {
       "id": 3,
@@ -90,9 +90,9 @@
       "productCategory": "Bikes",
       "productDescription": "this is a bike",
       "productImage": "../../../assets/images/bike1.jpg",
-      "productPrice": 50000,
+      "productPrice": 123123,
       "isSaved": false,
-      "HighestBidderId": 5
+      "HighestBidderId": 1
     },
     {
       "id": 4,

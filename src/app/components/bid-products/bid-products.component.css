@@ -1,0 +1,54 @@
+.page-grid{
+  margin: auto;
+  margin-top: 12px;
+  border: 1px solid silver;
+  padding: 5px;
+  width: 99.5%;
+  border-radius: 5px;
+}
+.row{
+  width: 100%;
+}
+.image-subtitle{
+  display: block;
+}
+.image-section{
+  padding: auto;
+  text-align: center;
+  padding: 20px;
+}
+.image-section .image{
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+.product-info{
+  padding: 30px;
+  border-bottom: 1px solid silver;
+}
+.product-name{
+  font-size: 7vh;
+}
+.product-category{
+  font-size: 3vh;
+}
+.product-description, .bid-section {
+  font-size: 2vh;
+}
+span{
+  font-weight: bold;
+}
+.card{
+  text-align: center;
+  width: 50%;
+  margin: 2% auto;
+  padding: 2%;
+}
+.price-input{
+  width: 70%;
+  margin: 2% auto;
+}
+button{
+  display: block;
+  margin: auto;
+}

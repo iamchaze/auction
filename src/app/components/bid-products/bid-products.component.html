@@ -1,33 +1,49 @@
-<app-nav-bar></app-nav-bar>
 <div class="page-grid">
-  <div>
-    <label for="image">Full Size Image</label>
-    <img [src]="imagePath" >
+  <div class="row">
+    <div class="image-section col-sm-6">
+      <img class="image" [src]="imagePath" >
+      <label class="image-subtitle" for="image">Full Size Image</label>
+    </div>
+    <div class="product-info col-sm-6">
+      <div>
+        <h2 class="product-name"> {{productName}} </h2>
+        <p class="product-category"><span>Category:  </span> {{  productCategory }} </p>
+        <p class="product-description"><span>Description: </span>{{productDescription}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea odio error tempore laboriosam accusantium doloribus culpa, illo reiciendis consectetur eius cupiditate facere illum a optio amet perspiciatis, magnam consequatur dolorem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio maiores sapiente similique pariatur odit rem, corrupti dolor hic, iure placeat sed? Non dolorum eos dolore vel autem, fugiat molestiae consequatur. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum quasi reiciendis, excepturi minima omnis deleniti repudiandae labore a aut eaque atque explicabo consequuntur eos alias soluta. Quam cum iste ratione. </p>
+      </div>
+      <div>
+        <label for="" class="bid-section"><span>Auction window: </span></label>
+        <p class="bid-section"> {{auctionWindow |  date:"mediumDate"}} </p>
+      </div>
+      <div class="bid-section">
+        <p><span>Highest Bidder Name: </span>{{highestBidderName | uppercase }} </p>
+      </div>
+      <div class="bid-section">
+        <p><span>Bid Winner: </span> {{bidWinner}} </p>
+      </div>
+    </div>
   </div>
-  <div>
-    <h2> {{productName}} </h2>
-    <p class="product-description">Description: {{productDescription}} </p>
-    <p class="product-category">Category: {{productCategory}} </p>
+  <div class="row card">
+    <div class="bid-section">
+      <p class=""><span>Highest Bid Price: </span> ${{ productPrice }} </p>
+    </div>
+    <div>
+
+    </div>
+    <ng-template #cannotbid>
+      <span>Auction is closed for this Product</span>
+    </ng-template>
+    <ng-template #bid>
+      <form  ngForm #myForm="ngForm" (ngSubmit) = "bidPriceData(myForm.value)">
+        <label for="">Enter Your Bid</label>
+        <input type="amount"  ngModel #refName ="ngModel" name="price"  [pattern] = "price"  class="form-control price-input" placeholder="$">
+        <small *ngIf="refName.hasError('pattern')">
+          Invalid Bid Value
+        </small>
+        <button class="btn btn-primary" type="submit" [disabled] = "myForm.invalid"  >Place Bid</button>
+      </form>
+    </ng-template>
+    <p *ngIf="cannotBidFlag; then cannotbid else bid"></p>
   </div>
-  <div>
-    <p class="bid-section">Highest Bid Price: ₹{{ productPrice }} </p>
-  </div>
-  <div>
-    <p>Highest Bidder Name: {{highestBidderName}} </p>
-  </div>
-  <div>
-    <p>Bid Winner: {{bidWinner}} </p>
-  </div>
-  <div>
-    <label for="">Auction window:</label>
-    <p> {{auctionWindow |  date:"mediumDate"}} </p>
-  </div>
-  <form  ngForm #myForm="ngForm" (ngSubmit) = "bidPriceData(myForm.value)">
-    <label for="">Your Bid</label>
-    <input type="amount" ngModel #refName ="ngModel" name="price"  [pattern] = "price"  class="" >
-    <small *ngIf="refName.hasError('pattern')">
-      Invalid Bid Value
-    </small>
-    <button class="btn btn-primary" type="submit" [disabled] = "myForm.invalid" >Submit Your Bid</button>
-  </form>
 </div>
+
+

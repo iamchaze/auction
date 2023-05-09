@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/shared/services/global.service';
 
@@ -20,6 +20,7 @@ constructor(private service: GlobalService, private router:Router, private locat
   productObj:any
   userObj:any
   flag:any
+
   ngOnInit(): void {
       if(sessionStorage.length > 0){
         this.currentUserId = sessionStorage.getItem('userid')
